@@ -38,6 +38,7 @@ describe('Add Products to Cart', () => {
     it("Should fill in the shopping details page", ()=>{
          
       cy.visit("https://magento.softwaretestingboard.com/checkout/#shipping")
+      // cy.url().should("include", "/checkout/#shipping")
   
          product.signin().click()
   
@@ -55,7 +56,15 @@ describe('Add Products to Cart', () => {
          product.country().select(country)
          product.telnumber().type(telnumber)
          product.selectitem().first().check()
-         
+
     })
+
+    it("should review and payment", ()=>{
+
+      cy.visit("https://magento.softwaretestingboard.com/checkout/#payment")
+
+          product.payment().click()
+    })
+    
 
 })

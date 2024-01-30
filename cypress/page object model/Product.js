@@ -105,6 +105,10 @@ class Product{
     clicknextbutton(){
         return cy.get("button[type='submit']")
     }
+
+    payment(){
+        return cy.get("button.action.primary.checkout")
+    }
 }
 
 export default Product;
