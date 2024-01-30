@@ -56,31 +56,4 @@ describe('Add Products to Cart', () => {
 
     })
 
-    // describe("Should carry out the checkout page", ()=>{
-      
-    //   it("Should fill in the shopping's details", ()=>{
-       
-    //     cy.visit("https://magento.softwaretestingboard.com/checkout/#shipping")
-  
-    //      product.signin().click()
-  
-    //      product.email().type(signin.Email)
-    //      product.password().type(signin.Password)
-    //      product.submit().click()
-  
-    //      product.company().type(company)
-    //      product.streetaddress().type(streetaddress)
-    //      product.streetaddress1().type(streetaddress1)
-    //      product.streetaddress2().type(streetaddress2)
-    //      product.city().type(city)
-    //      product.selectstate().select(state)
-    //      product.postalcode().type(postalcode)
-    //      product.country().select(country)
-    //      product.telnumber().type(telnumber)
-    //      product.selectitem().first().check()
-    //   })
-
-    // })
-
-
 })
