@@ -39,19 +39,15 @@ class Product{
     }
 
     clickcarticon(){
-        return cy.get(".action.showcart:visible")
+        return cy.get("a.action.showcart")
     }
 
-    // clickcountsign(){
-    //     return cy.get('.showcart')
+    // cartmodel(){
+    //     return cy.get('#top-cart-btn-checkout')
     // }
 
-    cartmodel(){
-        return cy.get('#top-cart-btn-checkout')
-    }
-
     signin(){
-        return cy.get("button[type=''button]")
+        return cy.get("button[type='button']")
     }
 
     email(){
@@ -67,7 +63,47 @@ class Product{
     }
 
     company(){
-        return cy.get('#E7WTQCI')
+        return cy.get("input[name='company']")
+    }
+
+    streetaddress(){
+        return cy.get("input[name='street[0]']")
+    }
+
+    streetaddress1(){
+        return cy.get("input[name='street[1]']")
+    }
+
+    streetaddress2(){
+        return cy.get("input[name='street[2]']")
+    }
+
+    city(){
+        return cy.get("input[name='city']")
+    }
+
+    selectstate(){
+        return cy.get(".select")
+    }
+
+    postalcode(){
+       return cy.get("input[name='postcode']")
+    }
+
+    country(){
+        return cy.get(".select")
+    }
+
+    telnumber(){
+        return cy.get(".telephone")
+    }
+
+    selectitem(){
+        return cy.get("input[type='radio']")
+    }
+
+    clicknextbutton(){
+        return cy.get("button[type='submit']")
     }
 }
 

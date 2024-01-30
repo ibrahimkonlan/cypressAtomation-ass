@@ -6,6 +6,14 @@ import Product from "../page object model/Product";
 const product = new Product();
 
 const company = "AmaliTech"
+const streetaddress = "Box 30, Takoradi"
+const streetaddress1 = "Box 10, Effia Kuma"
+const streetaddress2 = "Box 683, New Takoradi"
+const city = "New York"
+const state = "Taxes"
+const postalcode = "342"
+const country = "United State"
+const telnumber = "023957203884"
 
 describe('Add Products to Cart', () => {
 
@@ -13,8 +21,6 @@ describe('Add Products to Cart', () => {
     product.open()
     product.validateUrl()  
   })
-
-  
 
     it('should add products to the cart', () => {
       
@@ -26,20 +32,55 @@ describe('Add Products to Cart', () => {
       product.choiceqty().clear().type(Data.qty).should("be.visible")
       product.clickaddtocart().click({force: true})
       product.clickcarticon().should("have.attr", "href", "https://magento.softwaretestingboard.com/checkout/cart/").click({force: true})
-      // product.clickcountsign().should("be.visible").click({force:true})
-      product.cartmodel().click({force:true})
+      // product.cartmodel().click({force:true})
+
+      cy.visit("https://magento.softwaretestingboard.com/checkout/#shipping")
+  
+         product.signin().click()
+  
+         product.email().type(signin.Email)
+         product.password().type(signin.Password)
+         product.submit().click()
+  
+         product.company().type(company)
+         product.streetaddress().type(streetaddress)
+         product.streetaddress1().type(streetaddress1)
+         product.streetaddress2().type(streetaddress2)
+         product.city().type(city)
+         product.selectstate().select(state)
+         product.postalcode().type(postalcode)
+         product.country().select(country)
+         product.telnumber().type(telnumber)
+         product.selectitem().first().check()
+
+
     })
 
-    it("Should fill in the shopping's details", ()=>{
+    // describe("Should carry out the checkout page", ()=>{
+      
+    //   it("Should fill in the shopping's details", ()=>{
+       
+    //     cy.visit("https://magento.softwaretestingboard.com/checkout/#shipping")
+  
+    //      product.signin().click()
+  
+    //      product.email().type(signin.Email)
+    //      product.password().type(signin.Password)
+    //      product.submit().click()
+  
+    //      product.company().type(company)
+    //      product.streetaddress().type(streetaddress)
+    //      product.streetaddress1().type(streetaddress1)
+    //      product.streetaddress2().type(streetaddress2)
+    //      product.city().type(city)
+    //      product.selectstate().select(state)
+    //      product.postalcode().type(postalcode)
+    //      product.country().select(country)
+    //      product.telnumber().type(telnumber)
+    //      product.selectitem().first().check()
+    //   })
 
-       product.signin().click()
-
-       product.email().type(signin.Email)
-       product.password().type(signin.Password)
-       product.submit().click()
-
-       product.company().type(company)
-    })
+    // })
 
 
 })
