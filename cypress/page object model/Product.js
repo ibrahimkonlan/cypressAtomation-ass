@@ -47,7 +47,7 @@ class Product{
     // }
 
     signin(){
-        return cy.get("button[type='button']")
+        return cy.get("button.action.action-auth-toggle")
     }
 
     email(){
@@ -59,7 +59,7 @@ class Product{
     }
 
     submit(){
-        return cy.get("button[type=submit]")
+        return cy.get("button.action.action-login.secondary")
     }
 
     company(){
