@@ -42,9 +42,9 @@ class Product{
         return cy.get("a.action.showcart")
     }
 
-    // cartmodel(){
-    //     return cy.get('#top-cart-btn-checkout')
-    // }
+    cartmodel(){
+        return cy.get('#top-cart-btn-checkout')
+    }
 
     signin(){
         return cy.get("button.action.action-auth-toggle")

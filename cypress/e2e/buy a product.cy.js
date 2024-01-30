@@ -32,13 +32,12 @@ describe('Add Products to Cart', () => {
       product.choiceqty().clear().type(Data.qty).should("be.visible")
       product.clickaddtocart().click({force: true})
       product.clickcarticon().should("have.attr", "href", "https://magento.softwaretestingboard.com/checkout/cart/").click({force: true})
-      // product.cartmodel().click({force:true})
+      product.cartmodel().click({force:true})
     })
 
-    it("Should fill in the shopping details page", ()=>{
+    it("Proceed to Checkout and complete the order process.", ()=>{
          
       cy.visit("https://magento.softwaretestingboard.com/checkout/#shipping")
-      // cy.url().should("include", "/checkout/#shipping")
   
          product.signin().click()
   
@@ -59,11 +58,12 @@ describe('Add Products to Cart', () => {
 
     })
 
-    it("should review and payment", ()=>{
+    it("should do review and payment", ()=>{
 
       cy.visit("https://magento.softwaretestingboard.com/checkout/#payment")
 
           product.payment().click()
+          product.message().should('be.visible').and('include', 'Thank you for your purchase')
     })
     
 
