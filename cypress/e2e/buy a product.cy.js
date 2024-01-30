@@ -33,7 +33,10 @@ describe('Add Products to Cart', () => {
       product.clickaddtocart().click({force: true})
       product.clickcarticon().should("have.attr", "href", "https://magento.softwaretestingboard.com/checkout/cart/").click({force: true})
       // product.cartmodel().click({force:true})
+    })
 
+    it("Should fill in the shopping details page", ()=>{
+         
       cy.visit("https://magento.softwaretestingboard.com/checkout/#shipping")
   
          product.signin().click()
@@ -52,8 +55,7 @@ describe('Add Products to Cart', () => {
          product.country().select(country)
          product.telnumber().type(telnumber)
          product.selectitem().first().check()
-
-
+         
     })
 
 })
