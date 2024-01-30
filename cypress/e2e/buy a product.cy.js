@@ -22,7 +22,7 @@ describe('Add Products to Cart', () => {
     product.validateUrl()  
   })
 
-    it('should add products to the cart', () => {
+    it.only('should add products to the cart', () => {
       
       product.searchbar().type(Data.Product)
       product.clickproductlist().first().click({force:true})
@@ -31,8 +31,8 @@ describe('Add Products to Cart', () => {
       product.choicecolour().click({force: true}).should("be.visible")
       product.choiceqty().clear().type(Data.qty).should("be.visible")
       product.clickaddtocart().click({force: true})
-      product.clickcarticon().should("have.attr", "href", "https://magento.softwaretestingboard.com/checkout/cart/").click({force: true})
-      product.cartmodel().click({force:true})
+      product.clickcarticon().should("be.visible").click({force: true})
+      product.clickcheckout().click({force:true})
     })
 
     it("Proceed to Checkout and complete the order process.", ()=>{

@@ -39,10 +39,10 @@ class Product{
     }
 
     clickcarticon(){
-        return cy.get("a.action.showcart")
+        return cy.get("a.action.showcart > .counter.qty")
     }
 
-    cartmodel(){
+    clickcheckout(){
         return cy.get('#top-cart-btn-checkout')
     }
 
@@ -108,6 +108,10 @@ class Product{
 
     payment(){
         return cy.get("button.action.primary.checkout")
+    }
+
+    message(){
+        return cy.get(".page-title")
     }
 }
 
